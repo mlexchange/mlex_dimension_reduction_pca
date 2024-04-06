@@ -57,23 +57,17 @@ if __name__ == "__main__":
     stacked_images = None
 
     uid_retrieve = io_parameters["uid_retrieve"]
-    if uid_retrieve is not None:
+    if uid_retrieve != "":
         # Get feature vectors from autoencoder
-        stacked_images = pd.read_parquet(
-            f"data/mlexchange_store/{uid_retrieve}/f_vectors.parquet"
-        ).values
+        auto_fv_dir = io_parameters["output_dir"] + "/" + uid_retrieve
+        stacked_images = pd.read_parquet(f"{auto_fv_dir}/f_vectors.parquet").values
 
     else:
         data_uris = io_parameters["data_uris"]
 
         for uri in data_uris:
-            if "data/example_shapes/Demoshapes.npz" in uri:  # example dataset
+            if "Demoshapes.npz" in uri:  # example dataset
                 images = np.load(uri)["arr_0"]
-            elif (
-                "data/example_latentrepresentation/f_vectors.parquet" in uri
-            ):  # example dataset
-                df = pd.read_parquet(uri)
-                images = df.values
 
             else:
                 # FM, file system or tiled
