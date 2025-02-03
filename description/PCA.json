@@ -31,7 +31,7 @@
                 "param_key": "n_components"
             }
         ],
-        "python_file_name": "mlex_dimension_reduction_pca/pca_run.py",
+        "python_file_name": "mlex_dimension_reduction_pca/src/pca_run.py",
         "public": false
         }
     ]
