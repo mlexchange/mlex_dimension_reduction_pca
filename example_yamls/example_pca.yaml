@@ -1,0 +1,14 @@
+# Example for parameters to excecute
+
+io_parameters:
+  uid_retrieve: ''
+  data_type: 'file'
+  root_uri: ${READ_DIR}
+  data_uris: ${SUB_URIS}
+  results_tiled_uri: ${RESULTS_TILED_URI}
+  results_tiled_api_key: ${RESULTS_TILED_API_KEY}
+  uid_save: '123456'
+  results_dir: ${WRITE_DIR}
+
+model_parameters:
+  n_components: 2

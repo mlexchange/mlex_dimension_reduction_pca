@@ -1,11 +1,4 @@
-data/output/
-data/upload/
-.file_manager_vars
-data/upload/
-build/
-
-
-.DS_Store
+**.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

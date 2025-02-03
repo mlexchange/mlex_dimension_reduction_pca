@@ -25,7 +25,7 @@ def load_data(io_parameters, tiled_dataset, logger=None):
 
     # Get feature vectors from autoencoder
     if uid_retrieve != "":
-        write_dir = io_parameters.output_dir
+        write_dir = io_parameters.results_dir
         retrieve_path = f"{write_dir}/{uid_retrieve}/latent_vectors.parquet"
         stacked_images = pd.read_parquet(retrieve_path).values
         logger.info(f"Feature vectors loaded from {retrieve_path}")
@@ -87,7 +87,7 @@ def save_results(latent_vectors, io_parameters, tiled_dataset, parameters):
     :param parameters: dict
     :return: latent_vectors_path: str
     """
-    write_dir = io_parameters.output_dir
+    write_dir = io_parameters.results_dir
     uid_save = io_parameters.uid_save
 
     # Output directory

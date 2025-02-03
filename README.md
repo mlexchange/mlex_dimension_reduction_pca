@@ -1,23 +1,16 @@
 # mlex_dimension_reduction
-Dimension reduction algorithms for the MLExchange platform.
-  - [PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
-  - [UMAP](https://umap-learn.readthedocs.io/en/latest/)
+Dimension reduction algorithms using PCA for the MLExchange platform
 
 ## Getting started
-To get started, you will need:
-  - [Docker](https://docs.docker.com/get-docker/)
 
-## Running
-First, build the dimension reduction image in terminal:
-`cd mlex_dimension_reduction`
-`make build_docker`
+Set up a conda environment and install requirements:
+```bash
+conda create -n mlex_dimension_reduction_pca python=3.11
+conda activate mlex_dimension_reduction_pca
+pip install .
+```
 
-Once built, you can run the following examples:
-`make PCA_example`
-
-which is equivalend to first `make run_docker` then `python pca_run.py example_umap.yml`.
-
-These examples utilize the information stored in the folder /data. The computed latent vectors will be saved in data/output.
+An example execution script is provided. To run it, first create a `.env` file based on `.env.example`, then run `/example_run.sh`.
 
 ## Developer Setup
 If you are developing this library, there are a few things to note.
